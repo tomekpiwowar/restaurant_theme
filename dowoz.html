@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="pl">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>Default</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="./js/jquery.js"></script>
+  
+ <!-- Fonts -->
+ 
+<link href="https://fonts.googleapis.com/css?family=Krub:400,400i,500,500i|Lato:400,700,900|Montserrat:400,500,600,700" rel="stylesheet">
+ 
+ <!-- Icons -->
+ 
+ <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+ 
+</head>
+
+<body id="dowoz">
+	<header class="page-header">
+		<div class="container">
+			<a href="index.html" class="logo">
+				<div class="logo-image"></div>
+			</a>
+			<nav>
+				<div id="mobileNav">
+					<i class="fas fa-bars"></i>
+				</div>
+
+				<ul id="topNav" class="menu-items">
+					<li>
+						<a href="index.html">Strona Główna</a>
+					</li>
+					<li>
+						<a href="menu.html">Menu</a>
+					</li>
+					<li>
+						<a href="dowoz.html" class="active">Dowóz</a>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="no-click">Rezerwacje</a>
+						<div class="sub-menu"></div>
+						<ul class="sub-menu-list">
+							<li><a href="https://www.reservio.com/pl/">Restauracja 1</a></li>
+							<li><a href="https://www.reservio.com/pl/">Restauracja 2</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="onas.html">O nas</a>
+					</li>
+					<li>
+						<a href="kontakt.html">Kontakt</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<div id="mobileNavOpacity">
+		<section class="page-section parallax1 pages">
+			<div class="section-header">
+
+				<div class="quote-container pages">
+					<h1>DOWÓZ</h1>
+				</div>
+			</div>
+			<img src="images/angle-arrow-down.svg" alt="angle down" class="down-arrow">
+		</section>
+		<section class="page-section main1 pages">
+			<div class="container pages-title">
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+			</div>
+			<div class="container dowoz-map">
+				<iframe src="https://www.google.com/maps/d/embed?mid=1Uv9F3cKD_gzZftS8BSwhKppK0GC-2vY7" width="1250" height="750" scrolling="no"></iframe>
+			</div>
+			<div class="container menu-list">
+				<div class="container">
+					<div class="grid1">
+						<ul>
+							<li class="square zone1"></li>
+							<li class="zone-name">Strefa 1</li>
+							<li class="price">6zł</li>
+						</ul>
+					</div>
+
+					<div class="grid2">
+						<ul>
+							<li class="square zone2"></li>
+							<li class="zone-name">Strefa 2</li>
+							<li class="price">10zł</li>
+						</ul>
+					</div>
+				</div>
+				<p>Zamówienia powyżej 200 zł - dowóz gratis</p>
+			</div>
+		</section>
+
+		<footer>
+			<div class="main-footer">
+				<div class="grid-container">
+					<div class="grid">
+						<h4>Nasze lokalizacje</h4>
+						<div class="container">
+							<p>Śródmieście<br>Warszawa<br>ul. Piękna 12</p>
+							<p>Praga-Północ<br>Warszawa<br>ul. Jagiellońska 34</p>
+						</div>
+					</div>
+					<div class="grid">
+						<h4>Godziny otwarcia</h4>
+						<div class="container">
+							<p>Śródmieście<br>Pn - Czw: 12.00 - 22.00<br>Pt - Sb: 12.00 - 23.00</p>
+							<p>Praga-Północ<br>Codziennie<br>12.00 - 22.00</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="copyright">
+				<div class="up-arrow-container" id="upArrowContainer">
+					<img src="images/angle-arrow-up.svg" alt="angle up" class="up-arrow" id="upArrow">
+				</div>
+				<div class="container">
+					<p>Copyright 2018 Lorem ipsum</p>
+					<div class="social-links">
+						<a href="facebook.com"><i class="fab fa-facebook-f"></i></a>
+						<a href="instagram.com"><i class="fab fa-instagram"></i></a>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+<script> 
+	
+	window.onscroll = function() {
+  menuColor();
+	upScroll();
+};
+	
+	const desktopRes = window.matchMedia("(min-width: 901px)");
+	const mobileRes = window.matchMedia("(max-width: 900px)");
+	
+	
+	// Transparent to white top MENU while scroll
+	
+	function menuColor () {
+	const winHeight = window.innerHeight;
+  const nav = document.querySelector('header');
+	const mobileNavColor = document.getElementById("mobileNav");
+	
+		
+  if(this.scrollY <= (winHeight/2)) {
+		nav.className = 'page-header'; 
+		mobileNavColor.style.color = "#fff"
+	}
+	else if (mobileRes.matches) {
+		nav.className = 'page-header'; 
+		mobileNavColor.style.color = "#fff"
+	}
+	else { nav.className = 'page-header-white';
+				mobileNavColor.style.color = "#000"
+				 }
+}; 
+	
+	
+// Footer up-arrow transition while scrollling
+	
+	function upScroll() {
+		
+		const upArrowContainer = document.getElementById('upArrowContainer');
+		const upArrow = document.getElementById('upArrow');
+		
+		
+		if((window.scrollY + window.innerHeight) < document.body.offsetHeight) { upArrowContainer.className = 'up-arrow-container' ; 
+		upArrow.className = 'up-arrow' ; 
+		} else { 
+		upArrowContainer.className = 'up-arrow-container-transform' ; 
+		upArrow.className = 'up-arrow-transform' ; 
+		}	
+		
+}; 
+	
+	
+// Smooth scrolling down while click on Arrow
+	
+	
+const downArrow = document.getElementsByClassName('down-arrow')[0];
+const main1 = document.getElementsByClassName('main1')[0];
+	
+	downArrow.onclick = function () { 
+	main1.scrollIntoView({
+  behavior: 'smooth',
+})
+	};
+
+// Smooth scrolling up while click on Arrow
+	
+const upArrow = document.getElementById('upArrowContainer');
+
+	upArrow.onclick = function () { 
+	window.scroll({
+	top: 0,
+  behavior: 'smooth',
+})
+	};
+			
+	
+// Mobile Menu
+	
+	
+	const mobileNav = document.getElementById('mobileNav');
+  const topNav = document.getElementById('topNav');
+  const opacity = document.getElementById('mobileNavOpacity');
+	const mobileNavIcon = document.getElementsByClassName('fa-bars')[0];
+	
+	
+	function mobileOrDesktopNav(){
+		
+	if (desktopRes.matches){
+					topNav.classList.remove("mobile-menu-items");
+					topNav.classList.add("menu-items")	
+				    
+	} else { 
+	          
+		      	topNav.classList.add("mobile-menu-items")
+					 topNav.classList.remove("menu-items");
+					 }
+	}
+	
+  mobileOrDesktopNav(desktopRes);
+  desktopRes.addListener(mobileOrDesktopNav); 
+	
+
+
+		
+	function openMobileNav() { 
+				if (mobileRes.matches && getComputedStyle(topNav, null).display === "none"){
+        topNav.style.display = "flex";
+        opacity.style.opacity = "0.3"
+				}
+		}
+		
+	mobileNav.addEventListener('click', openMobileNav)
+		
+		function closeMobileNav(){
+					if ( mobileRes.matches && (topNav.style.display = "flex")) {
+              opacity.style.opacity = "1";
+							topNav.style.display = "none";
+						
+						}
+					}
+		
+    topNav.addEventListener('click', closeMobileNav)
+		opacity.addEventListener('click', closeMobileNav)
+	
+		
+	// Mobile menu Submenu dropdown 
+	
+/*	const dropdown = document.getElementsByClassName('dropdown')[0]; 
+	const subMenuList = document.getElementsByClassName('sub-menu-list')[0]; 
+		dropdown.addEventListener('click', function openSubMenuList(){
+			if (mobileRes.matches) {
+					if (subMenuList.style.display === "none"){
+						topNav.removeEventListener('click', closeMobileNav)
+						subMenuList.style.display = "flex";
+						
+					
+					} else {topNav.removeEventListener('click', closeMobileNav)
+						subMenuList.style.display = "none"
+								 }
+				}
+	}); */
+		
+</script>
+	
+
+</body>
+
+</html>
